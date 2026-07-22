@@ -4,6 +4,9 @@
 모두 순수 HTML/CSS/JS로 제작되어 빌드 도구나 외부 라이브러리 없이 파일만 열면 동작합니다.
 Raycast 스타일의 다크 테마와 그라디언트 강조 색상을 참고했습니다.
 
+🔗 **라이브 사이트**: https://aebonlee.github.io/templete04/ (커스텀 도메인: `templete04.dreamitbiz.com`, DNS 설정 후 활성화)
+📘 **개발 참고 가이드**: [`docs/개발-가이드.md`](./docs/개발-가이드.md) · **개발일지**: [`docs/개발일지.md`](./docs/개발일지.md)
+
 ## 템플릿 목록
 
 | 템플릿 | 콘셉트 | 특징 |
