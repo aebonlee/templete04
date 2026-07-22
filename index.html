@@ -42,6 +42,7 @@
     }
     .vbtn:hover { transform: translateY(-1px); border-color: var(--brand); background: var(--surface); }
     .vbtn .dot { width: 8px; height: 8px; border-radius: 3px; }
+    .vbtn .dot--raycast { background: #ff6363; }
     .vbtn .dot--nova { background: #6c8cff; }
     .vbtn .dot--aurora { background: #22d3ee; }
 
@@ -87,11 +88,13 @@
     .btn-lg--outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .btn-lg--outline:hover { transform: translateY(-2px); border-color: var(--brand); background: var(--surface); }
     .btn-lg .dot { width: 9px; height: 9px; border-radius: 3px; }
+    .btn-lg .dot--raycast { background: #ff6363; }
     .btn-lg .dot--nova { background: #6c8cff; }
     .btn-lg .dot--aurora { background: #22d3ee; }
+    .thumb--raycast { background: radial-gradient(120% 120% at 50% 0%, #ff636333, transparent), linear-gradient(160deg,#141013,#0a0708); }
 
     .grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 22px; padding: 24px 0 72px;
     }
     .card {
@@ -128,7 +131,8 @@
 
     footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 13.5px; text-align: center; }
 
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
     @media (prefers-reduced-motion: reduce) { .card:hover { transform: none; } }
   </style>
 </head>
@@ -137,6 +141,7 @@
     <div class="topbar">
       <span class="topbar__brand"><span class="mark" aria-hidden="true"></span> 템플릿 갤러리</span>
       <nav class="topbar__nav" aria-label="템플릿 버전">
+        <a class="vbtn" href="./raycast/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast</a>
         <a class="vbtn" href="./nova/"><span class="dot dot--nova" aria-hidden="true"></span>Nova</a>
         <a class="vbtn" href="./aurora/"><span class="dot dot--aurora" aria-hidden="true"></span>Aurora</a>
       </nav>
@@ -149,7 +154,8 @@
       <h1>재사용 가능한 <span class="grad">랜딩페이지 템플릿</span></h1>
       <p>순수 HTML/CSS/JS로 만든 반응형 디자인 템플릿 모음입니다. 아래 버튼으로 각 버전을 바로 조회하거나, 카드에서 자세히 살펴보세요.</p>
       <div class="hero__buttons">
-        <a class="btn-lg btn-lg--primary" href="./nova/"><span class="dot dot--nova" aria-hidden="true"></span>Nova 버전 보기</a>
+        <a class="btn-lg btn-lg--primary" href="./raycast/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast 버전 보기</a>
+        <a class="btn-lg btn-lg--outline" href="./nova/"><span class="dot dot--nova" aria-hidden="true"></span>Nova 버전 보기</a>
         <a class="btn-lg btn-lg--outline" href="./aurora/"><span class="dot dot--aurora" aria-hidden="true"></span>Aurora 버전 보기</a>
       </div>
     </div>
@@ -157,6 +163,16 @@
 
   <main class="wrap">
     <div class="grid">
+      <a class="card" href="./raycast/">
+        <div class="thumb thumb--raycast">Raycast</div>
+        <div class="card__body">
+          <span class="tag">런처 · 제품 (고충실도 클론)</span>
+          <h2>Raycast</h2>
+          <p>실제 raycast.com에 근접한 클론 — 커맨드바 UI 목업, 확장 그리드, AI 섹션, 시그니처 레드(#FF6363) 다크 테마.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
       <a class="card" href="./nova/">
         <div class="thumb thumb--nova">Nova</div>
         <div class="card__body">
