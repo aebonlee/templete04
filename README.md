@@ -15,8 +15,6 @@ Raycast 스타일의 다크 테마와 그라디언트 강조 색상을 참고했
 |--------|--------|------|
 | [**Raycast Pro**](./raycast-pro/) | 런처 · 제품 (실제 사이트 재현) | 실제 raycast.com 마크업 기반 풀 재현 — 로고 SVG, Meet Glaze, 확장·AI·후기·커뮤니티·API·뉴스레터, 칼집처럼 기울인 광선 |
 | [**Raycast**](./raycast/) | 런처 · 제품 (고충실도 클론) | 커맨드바 UI 목업, 확장 그리드, AI 섹션, 시그니처 레드(#FF6363), 세로 광선 |
-| [**Nova**](./nova/) | 제품 · 런처 소개 | 히어로 제품 목업, 기능 그리드, 연동, 후기, 요금제 |
-| [**Aurora**](./aurora/) | 스타트업 · SaaS | 벤토 그리드, 스탯 카운트업, FAQ 아코디언, 가격표, **다크/라이트 테마 토글** |
 
 각 템플릿 폴더에는 동일한 3개 파일이 들어 있습니다.
 
@@ -37,12 +35,12 @@ Raycast 스타일의 다크 테마와 그라디언트 강조 색상을 참고했
 
 ```bash
 # 원하는 템플릿 폴더로 이동해서 바로 열기
-open nova/index.html            # macOS
-open aurora/index.html
+open raycast-pro/index.html      # macOS
+open raycast/index.html
 
 # 또는 간단한 로컬 서버로 (프로젝트 루트에서)
 python3 -m http.server 8000
-# → http://localhost:8000/nova/  또는  /aurora/
+# → http://localhost:8000/raycast-pro/  또는  /raycast/
 ```
 
 ## 커스터마이징
@@ -50,23 +48,14 @@ python3 -m http.server 8000
 각 템플릿의 `styles.css` 상단 `:root` 토큰만 수정하면 됩니다.
 
 ```css
-/* 예: aurora/styles.css */
+/* 예: raycast/styles.css */
 :root {
-  --brand:   #22d3ee;   /* 주요 강조색 */
-  --brand-2: #6366f1;   /* 보조 그라디언트 색 */
-  --accent:  #f472b6;   /* 포인트 색 */
-  --bg:      #0a0f1a;   /* 배경 */
-  --radius:  18px;      /* 카드 모서리 */
+  --red:    #ff6363;   /* Raycast 시그니처 레드 */
+  --bg:     #07080a;   /* 배경 */
+  --text:   #ffffff;   /* 본문 색 */
+  --radius: 14px;      /* 카드 모서리 */
 }
 ```
-
-## 테마 (Aurora)
-
-Aurora는 우측 상단 버튼으로 **다크 ⇄ 라이트 테마**를 전환할 수 있습니다.
-선택한 테마는 `localStorage`에 저장되며, 최초 방문 시에는 OS 설정
-(`prefers-color-scheme`)을 따릅니다. 라이트 테마는 `styles.css`의
-`:root[data-theme="light"]` 블록에서 토큰만 재정의해 구현되어 있어, 색상만
-바꾸면 원하는 밝은 톤으로 조정할 수 있습니다.
 
 ## 새 템플릿 추가하기
 

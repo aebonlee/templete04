@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="재사용 가능한 반응형 랜딩페이지 디자인 템플릿 모음 — Nova, Aurora." />
+  <meta name="description" content="재사용 가능한 반응형 랜딩페이지 디자인 템플릿 모음 — Raycast Pro, Raycast." />
   <title>디자인 템플릿 갤러리</title>
   <style>
     :root {
@@ -43,8 +43,6 @@
     .vbtn:hover { transform: translateY(-1px); border-color: var(--brand); background: var(--surface); }
     .vbtn .dot { width: 8px; height: 8px; border-radius: 3px; }
     .vbtn .dot--raycast { background: #ff6363; }
-    .vbtn .dot--nova { background: #6c8cff; }
-    .vbtn .dot--aurora { background: #22d3ee; }
 
     header.hero {
       position: relative; overflow: hidden;
@@ -89,12 +87,11 @@
     .btn-lg--outline:hover { transform: translateY(-2px); border-color: var(--brand); background: var(--surface); }
     .btn-lg .dot { width: 9px; height: 9px; border-radius: 3px; }
     .btn-lg .dot--raycast { background: #ff6363; }
-    .btn-lg .dot--nova { background: #6c8cff; }
-    .btn-lg .dot--aurora { background: #22d3ee; }
     .thumb--raycast { background: radial-gradient(120% 120% at 50% 0%, #ff636333, transparent), linear-gradient(160deg,#141013,#0a0708); }
 
     .grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      max-width: 760px; margin-inline: auto;
       gap: 22px; padding: 24px 0 72px;
     }
     .card {
@@ -113,8 +110,6 @@
       font-size: 34px; font-weight: 800; letter-spacing: -.02em;
       border-bottom: 1px solid var(--border);
     }
-    .thumb--nova { background: radial-gradient(120% 120% at 20% 0%, #6c8cff33, transparent), linear-gradient(160deg,#141a2b,#0d1017); }
-    .thumb--aurora { background: radial-gradient(120% 120% at 80% 0%, #22d3ee33, transparent), linear-gradient(160deg,#101a2a,#0b1220); }
     .card__body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .card__body h2 { margin: 0; font-size: 1.3rem; }
     .tag {
@@ -143,8 +138,6 @@
       <nav class="topbar__nav" aria-label="템플릿 버전">
         <a class="vbtn" href="./raycast-pro/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast Pro</a>
         <a class="vbtn" href="./raycast/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast</a>
-        <a class="vbtn" href="./nova/"><span class="dot dot--nova" aria-hidden="true"></span>Nova</a>
-        <a class="vbtn" href="./aurora/"><span class="dot dot--aurora" aria-hidden="true"></span>Aurora</a>
       </nav>
     </div>
   </div>
@@ -157,8 +150,6 @@
       <div class="hero__buttons">
         <a class="btn-lg btn-lg--primary" href="./raycast-pro/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast Pro 보기</a>
         <a class="btn-lg btn-lg--outline" href="./raycast/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast 보기</a>
-        <a class="btn-lg btn-lg--outline" href="./nova/"><span class="dot dot--nova" aria-hidden="true"></span>Nova 보기</a>
-        <a class="btn-lg btn-lg--outline" href="./aurora/"><span class="dot dot--aurora" aria-hidden="true"></span>Aurora 보기</a>
       </div>
     </div>
   </header>
@@ -185,25 +176,6 @@
         </div>
       </a>
 
-      <a class="card" href="./nova/">
-        <div class="thumb thumb--nova">Nova</div>
-        <div class="card__body">
-          <span class="tag">제품 · 런처 소개</span>
-          <h2>Nova</h2>
-          <p>히어로 제품 목업, 기능 그리드, 연동, 후기, 요금제까지 갖춘 제품 소개형 템플릿.</p>
-          <span class="card__cta">템플릿 열기 →</span>
-        </div>
-      </a>
-
-      <a class="card" href="./aurora/">
-        <div class="thumb thumb--aurora">Aurora</div>
-        <div class="card__body">
-          <span class="tag">스타트업 · SaaS</span>
-          <h2>Aurora</h2>
-          <p>벤토 그리드, 스탯 카운트업, FAQ 아코디언, 다크/라이트 테마 토글을 지원하는 SaaS형 템플릿.</p>
-          <span class="card__cta">템플릿 열기 →</span>
-        </div>
-      </a>
     </div>
   </main>
 
