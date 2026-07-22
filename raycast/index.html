@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your shortcut to everything. A collection of powerful productivity tools all within an extendable launcher. Fast, ergonomic and reliable." />
+  <title>Raycast · Your shortcut to everything</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Announcement banner -->
+  <a class="banner" href="#">
+    <span class="banner__spark">✦</span>
+    <strong>Try the new Raycast beta</strong>
+    <span class="banner__sep">·</span>
+    <span>Meet Glaze</span>
+    <span class="banner__arrow">→</span>
+  </a>
+
+  <!-- Navigation -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a href="#top" class="logo" aria-label="Raycast">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__word">Raycast</span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Primary">
+        <a href="#extensions">Store</a>
+        <a href="#ai">Pro</a>
+        <a href="#ai">AI</a>
+        <a href="#">iOS</a>
+        <a href="#">Windows</a>
+        <a href="#teams">Teams</a>
+        <a href="#">Enterprise</a>
+        <a href="#">Blog</a>
+        <a href="#cta">Pricing</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#" class="nav__login">Log in</a>
+        <a href="#cta" class="btn btn--primary">Download</a>
+      </div>
+
+      <button class="nav__burger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#extensions">Store</a>
+      <a href="#ai">Pro</a>
+      <a href="#ai">AI</a>
+      <a href="#teams">Teams</a>
+      <a href="#cta">Pricing</a>
+      <a href="#" class="nav__login">Log in</a>
+      <a href="#cta" class="btn btn--primary">Download</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <h1 class="hero__title">Your shortcut<br />to everything.</h1>
+        <p class="hero__sub">
+          A collection of powerful productivity tools all within an
+          extendable launcher.<br class="hide-sm" /> Fast, ergonomic and reliable.
+        </p>
+        <div class="hero__cta">
+          <a href="#cta" class="btn btn--primary btn--lg">
+            <span aria-hidden="true"></span> Download for Mac
+          </a>
+          <a href="#cta" class="btn btn--ghost btn--lg">Download for Windows (beta)</a>
+        </div>
+        <p class="hero__note">Install via <a href="#">homebrew</a> or <a href="#">winget</a></p>
+
+        <!-- Command bar mockup (signature) -->
+        <div class="raycast-ui" aria-hidden="true">
+          <div class="rc__search">
+            <span class="rc__appicon rc__appicon--ray"></span>
+            <input class="rc__input" value="" placeholder="Search for apps and commands…" readonly />
+            <span class="rc__tag">Raycast</span>
+          </div>
+          <div class="rc__body">
+            <p class="rc__group">Suggestions</p>
+            <ul class="rc__list">
+              <li class="rc__row is-active">
+                <span class="rc__ico" style="--c:#FF6363">◎</span>
+                <span class="rc__name">Search Files</span>
+                <span class="rc__type">Command</span>
+              </li>
+              <li class="rc__row">
+                <span class="rc__ico" style="--c:#56C2FF">🗓</span>
+                <span class="rc__name">My Schedule</span>
+                <span class="rc__type">Calendar</span>
+              </li>
+              <li class="rc__row">
+                <span class="rc__ico" style="--c:#59D499">📖</span>
+                <span class="rc__name">Define Word</span>
+                <span class="rc__type">Dictionary</span>
+              </li>
+              <li class="rc__row">
+                <span class="rc__ico" style="--c:#FFC531">🧮</span>
+                <span class="rc__name">Calculator History</span>
+                <span class="rc__type">Calculator</span>
+              </li>
+            </ul>
+            <p class="rc__group">Commands</p>
+            <ul class="rc__list">
+              <li class="rc__row">
+                <span class="rc__ico" style="--c:#56C2FF">🔍</span>
+                <span class="rc__name">Search Google</span>
+                <span class="rc__type">Google Chrome</span>
+              </li>
+              <li class="rc__row">
+                <span class="rc__ico" style="--c:#FF6363">🪟</span>
+                <span class="rc__name">Window Management</span>
+                <span class="rc__type">Command</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rc__footer">
+            <span class="rc__brand"><span class="rc__brandmark"></span> Raycast</span>
+            <div class="rc__foot-actions">
+              <span class="rc__open">Open Command <kbd>↵</kbd></span>
+              <span class="rc__divider"></span>
+              <span class="rc__actions">Actions <kbd>⌘</kbd><kbd>K</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature strip -->
+    <section class="section strip">
+      <div class="wrap">
+        <h2 class="h2">Take shortcuts, not detours.</h2>
+        <p class="lede">One interface, everything you need.</p>
+        <ul class="pills">
+          <li><span class="dot" style="--c:#FF6363"></span> Fast.</li>
+          <li><span class="dot" style="--c:#59D499"></span> Ergonomic.</li>
+          <li><span class="dot" style="--c:#56C2FF"></span> Keyboard First.</li>
+          <li><span class="dot" style="--c:#FFC531"></span> Native.</li>
+          <li><span class="dot" style="--c:#FF6363"></span> Reliable.</li>
+        </ul>
+        <p class="strip__meta">99.9% crash-free rate.</p>
+      </div>
+    </section>
+
+    <!-- Extensions -->
+    <section class="section" id="extensions">
+      <div class="wrap">
+        <header class="head">
+          <h2 class="h2">There’s an extension for that.</h2>
+          <p class="lede">Use your favorite tools without even opening them.</p>
+          <div class="tabs" role="tablist">
+            <button class="tab is-active">Productivity</button>
+            <button class="tab">Engineering</button>
+            <button class="tab">Design</button>
+            <button class="tab">Writing</button>
+          </div>
+        </header>
+
+        <div class="ext-grid">
+          <article class="ext"><span class="ext__ico" style="--c:#5E6AD2">L</span><div><h3>Linear</h3><p>Create, search and modify your issues without leaving your keyboard.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#4285F4">G</span><div><h3>Google Translate</h3><p>Effortlessly translate into multiple languages.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#1DB954">S</span><div><h3>Spotify</h3><p>Search music and podcasts, browse your library, and control playback.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#0B8A5B">T</span><div><h3>TinyPNG</h3><p>Compress the selected images in Finder with TinyPNG.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#1A73E8">1</span><div><h3>1Password</h3><p>Grab any password or credential from your 1Password vaults.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#2684FF">J</span><div><h3>JIRA</h3><p>Manage your JIRA issues and sprints without leaving your keyboard.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#4A154B">S</span><div><h3>Slack</h3><p>Set your presence, see unread messages and search your chats.</p></div></article>
+          <article class="ext"><span class="ext__ico" style="--c:#111111">N</span><div><h3>Notion</h3><p>The fastest way to search and create Notion pages.</p></div></article>
+        </div>
+        <p class="ext-more">Plus thousands more…</p>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="section ai" id="ai">
+      <div class="ai__glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="head">
+          <span class="eyebrow">Raycast AI</span>
+          <h2 class="h2">Your Mac just got smarter.</h2>
+          <p class="lede">AI where it’s most useful — on your OS.</p>
+        </header>
+        <div class="ai-cards">
+          <div class="ai-card"><h3>Ask Anything, Anytime, Anywhere.</h3><p>Realtime knowledge, right in your workflow.</p></div>
+          <div class="ai-card"><h3>Always On ChatGPT.</h3><p>The best models, one keystroke away.</p></div>
+          <div class="ai-card"><h3>Your Automation Assistant.</h3><p>Turn your Mac into an AI-native operating system.</p></div>
+        </div>
+        <a href="#" class="link-arrow">More about AI →</a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="teams">
+      <div class="wrap">
+        <header class="head">
+          <h2 class="h2">Built for professionals like you.</h2>
+          <p class="lede">Used by seriously productive people.</p>
+        </header>
+        <div class="quotes">
+          <blockquote class="quote"><p>Turning my Mac into an AI-native operating system.</p><footer><span class="av">GR</span><cite>Guillermo Rauch<small>CEO, Vercel</small></cite></footer></blockquote>
+          <blockquote class="quote"><p>Realtime knowledge, anywhere in your OS. AI Chat is my favorite feature.</p><footer><span class="av">MB</span><cite>Marques Brownlee<small>Creator, MKBHD</small></cite></footer></blockquote>
+          <blockquote class="quote"><p>The fastest way I’ve found to move through my day without touching the mouse.</p><footer><span class="av">AW</span><cite>Adam Wathan<small>Creator, Tailwind CSS</small></cite></footer></blockquote>
+          <blockquote class="quote"><p>Raycast is the first launcher that actually stuck for me. It’s that good.</p><footer><span class="av">WB</span><cite>Wes Bos<small>Co-host, SyntaxFM</small></cite></footer></blockquote>
+          <blockquote class="quote"><p>I own my workflow with Raycast. Everything is a keystroke away.</p><footer><span class="av">MS</span><cite>Max Stoiber<small>CEO, Stellate</small></cite></footer></blockquote>
+          <blockquote class="quote"><p>The extension ecosystem makes it endlessly customizable.</p><footer><span class="av">KB</span><cite>Koen Bok<small>Founder, Framer</small></cite></footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Automate -->
+    <section class="section section--muted">
+      <div class="wrap">
+        <header class="head">
+          <h2 class="h2">Don’t repeat yourself.</h2>
+          <p class="lede">Automate the things you do all the time.</p>
+        </header>
+        <div class="auto-grid">
+          <article class="auto"><h3>Snippets</h3><p>Tired of typing the same thing? Create a snippet and insert it by simply typing its keyword.</p></article>
+          <article class="auto"><h3>Quicklinks</h3><p>Say goodbye to open tabs. Create quicklinks to launch anything from anywhere.</p></article>
+          <article class="auto"><h3>Hotkeys and Aliases</h3><p>Speed up your workflow by assigning hotkeys or aliases to common commands or apps.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- What else -->
+    <section class="section whatelse">
+      <div class="wrap">
+        <h2 class="h2 center">What else can Raycast do?</h2>
+        <ul class="marquee-list">
+          <li>It can take notes.</li><li>Track your flights.</li><li>Convert anything.</li>
+          <li>Search files.</li><li>Run scripts.</li><li>Manage your windows.</li>
+          <li>Plan your day.</li><li>Remind you of stuff.</li><li>Translate into any language.</li>
+          <li>Block distractions.</li><li>Find text in screenshots.</li><li>Insert Emojis.</li>
+          <li class="muted">And much, much more.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="cta">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="wrap cta__inner">
+        <h2 class="h2">Take the short way.</h2>
+        <p class="lede">Download and use Raycast for free.</p>
+        <div class="hero__cta">
+          <a href="#" class="btn btn--primary btn--lg">Download for Mac</a>
+          <a href="#" class="btn btn--ghost btn--lg">Download for Windows (beta)</a>
+        </div>
+        <p class="hero__note">Install via <a href="#">homebrew</a> or <a href="#">winget</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="logo"><span class="logo__mark" aria-hidden="true"></span><span class="logo__word">Raycast</span></a>
+        <p>Your shortcut to everything.</p>
+      </div>
+      <nav class="footer__col"><h4>Product</h4><a href="#">Store</a><a href="#">Changelog</a><a href="#">Pro</a><a href="#">Teams</a><a href="#cta">Pricing</a></nav>
+      <nav class="footer__col"><h4>Developers</h4><a href="#">API Docs</a><a href="#">Manual</a><a href="#">Get started</a><a href="#">Publish to the Store</a></nav>
+      <nav class="footer__col"><h4>Company</h4><a href="#">Manifesto</a><a href="#">Careers</a><a href="#">Blog</a><a href="#">Press Kit</a><a href="#">Contact</a></nav>
+      <nav class="footer__col"><h4>Community</h4><a href="#">Community Stories</a><a href="#">Ambassadors</a><a href="#">GitHub</a><a href="#">Dribbble</a></nav>
+    </div>
+    <div class="wrap footer__bottom">
+      <small>© 2026 Raycast Technologies Ltd. Design template clone — not affiliated with Raycast.</small>
+      <div class="footer__social"><a href="#" aria-label="X">X</a><a href="#" aria-label="GitHub">GitHub</a><a href="#" aria-label="YouTube">YouTube</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
