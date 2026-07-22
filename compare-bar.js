@@ -27,6 +27,10 @@
 
   // 개발 내역 (최신순)
   var history = [
+    ["커맨드바 런처 목업", "Raycast의 시그니처 런처 창을 히어로에 재현 — 검색 입력·Favorites/Suggestions·활성 행·Actions ⌘K 푸터"],
+    ["히어로 WebGL 유리 배경", "라이브러리 없이 순수 WebGL fbm 셰이더로 살아 움직이는 붉은 유리 블롭(reduced-motion·폴백 대응)"],
+    ["히어로 붉은 유리 블롭·타이포 계측", "대각선 광선을 붉은/핑크/화이트 유리 블롭으로 교체, 실제 계측값(64/72·max540)에 맞춘 타이포"],
+    ["Nova·Aurora 삭제", "기초 템플릿 2종 제거, 컬렉션을 Raycast Pro·Raycast로 정리"],
     ["상단 비교 띠줄", "모든 페이지에서 버전 전환·비교 + 개발 내역 확인"],
     ["Raycast Pro", "실제 raycast.com 마크업 기반 풀 재현(로고 SVG·Meet Glaze·Community·API·뉴스레터), 광선을 칼집처럼 기울임"],
     ["히어로 세로 광선", "Raycast 히어로에 브랜드 4색(레드·옐로·그린·블루) 세로 광선 추가"],
