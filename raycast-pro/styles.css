@@ -528,3 +528,101 @@ kbd {
    투명 영역 보정을 위해 아래에 깔아 둔다(하위 z-index 유지). */
 .hero__glass, .hero__cube { z-index: 0; }
 .hero__grain { z-index: 2; }
+
+/* =========================================================
+   시그니처 커맨드바 런처 목업 — 실제 Raycast 런처 창
+   반투명 다크 글래스 + 검색 입력 + 커맨드 리스트 + Actions 푸터
+   ========================================================= */
+.rc {
+  width: min(560px, 100%);
+  margin: 40px auto 0;
+  text-align: left;
+  background: rgba(22, 22, 26, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .06) inset,
+    0 40px 80px -30px rgba(0, 0, 0, .8),
+    0 20px 60px -40px rgba(255, 99, 99, .5);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  overflow: hidden;
+  animation: rc-in .7s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes rc-in {
+  from { opacity: 0; transform: translateY(18px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 검색 입력 */
+.rc__search {
+  display: flex; align-items: center; gap: 12px;
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.rc__logo { flex: none; }
+.rc__query { flex: 1; font-size: 16px; color: var(--muted); letter-spacing: -.01em; }
+.rc__caret {
+  display: inline-block; width: 1.5px; height: 17px; margin-left: 1px;
+  background: #fff; vertical-align: -3px;
+  animation: rc-blink 1.1s steps(1) infinite;
+}
+@keyframes rc-blink { 50% { opacity: 0; } }
+.rc__hint {
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  color: #ffb0b0; background: rgba(255, 99, 99, .16);
+  border: 1px solid rgba(255, 99, 99, .28); border-radius: 6px;
+  padding: 2px 7px;
+}
+
+/* 커맨드 리스트 */
+.rc__list { padding: 8px; }
+.rc__label {
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--muted-2);
+  padding: 8px 10px 5px;
+}
+.rc__row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 10px; border-radius: 9px;
+  cursor: default; transition: background .13s ease;
+}
+.rc__row.is-active { background: rgba(255, 255, 255, .09); }
+.rc__ico {
+  flex: none; width: 26px; height: 26px; border-radius: 7px;
+  display: grid; place-items: center; font-size: 14px;
+  background: color-mix(in srgb, var(--c, #666) 30%, #1a1a1e);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+.rc__ico--ai {
+  color: #fff; font-size: 15px;
+  background: linear-gradient(135deg, #ff6363, #ff9a4d);
+}
+.rc__name { flex: 1; font-size: 14.5px; color: #f2f2f4; letter-spacing: -.01em; }
+.rc__type { font-size: 12.5px; color: var(--muted-2); }
+
+/* 하단 액션 바 */
+.rc__foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 16px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(0, 0, 0, .22);
+}
+.rc__brand { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #e6e6e8; }
+.rc__actions { display: inline-flex; align-items: center; gap: 12px; }
+.rc__act { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--muted); }
+.rc__act kbd {
+  min-width: 20px; height: 20px; padding: 0 5px; font-size: 12px; line-height: 18px;
+  background: rgba(255, 255, 255, .09); border-color: rgba(255, 255, 255, .13);
+}
+.rc__divider { width: 1px; height: 16px; background: rgba(255, 255, 255, .12); }
+
+@media (max-width: 720px) {
+  .rc { margin-top: 28px; }
+  .rc__query { font-size: 15px; }
+  .rc__act:first-child { display: none; }  /* 좁은 화면에선 Actions만 노출 */
+}
+@media (prefers-reduced-motion: reduce) {
+  .rc { animation: none; }
+  .rc__caret { animation: none; }
+}
