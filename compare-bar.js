@@ -9,10 +9,12 @@
 
   // 현재 페이지 깊이에 맞춘 상대 경로 베이스 (루트=./, 하위폴더=../)
   var path = location.pathname;
-  var folders = ["raycast-pro", "raycast"];
+  var folders = ["raycast-pro", "raycast", "raycast-frost", "raycast-mono", "raycast-neon", "raycast-sunset", "raycast-teams"];
   var current = "";
   for (var i = 0; i < folders.length; i++) {
-    if (path.indexOf("/" + folders[i] + "/") !== -1 || path.indexOf("/" + folders[i]) !== -1) {
+    // 폴더명이 경로의 온전한 세그먼트일 때만 매칭 (뒤에 "/" 또는 경로 끝).
+    // 그냥 indexOf 를 쓰면 "raycast" 가 "raycast-frost" 를 잘못 매칭하므로 경계 필요.
+    if (new RegExp("/" + folders[i] + "(/|$)").test(path)) {
       current = folders[i];
       break;
     }
@@ -22,11 +24,18 @@
   // 버전 목록
   var versions = [
     { id: "raycast-pro", label: "Raycast Pro", note: "실제 사이트 재현 · 붉은 유리 블롭", dot: "#ff6363" },
-    { id: "raycast", label: "Raycast", note: "고충실도 클론 · 세로 광선", dot: "#ff6363" }
+    { id: "raycast", label: "Raycast", note: "고충실도 클론 · 세로 광선", dot: "#ff6363" },
+    { id: "raycast-frost", label: "Frost", note: "라이트 · 프로스트 글래스 · 파스텔 오로라", dot: "#6c5ce7" },
+    { id: "raycast-mono", label: "Mono", note: "스위스 그리드 · 모노크롬 에디토리얼", dot: "#e5484d" },
+    { id: "raycast-neon", label: "Neon", note: "사이버펑크 · 네온 시안/마젠타 · 스캔라인", dot: "#00e5ff" },
+    { id: "raycast-sunset", label: "Sunset", note: "선셋 그라디언트 · 활기찬 웜톤", dot: "#ff4d8d" },
+    { id: "raycast-teams", label: "Teams", note: "협업/엔터프라이즈 · 레드+바이올렛", dot: "#7c6bff" }
   ];
 
   // 개발 내역 (최신순)
   var history = [
+    ["신규 디자인 4+1종", "완전히 다른 방향의 템플릿 추가 — Frost(라이트 글래스)·Mono(모노크롬 에디토리얼)·Neon(사이버펑크)·Sunset(선셋 그라디언트) + Teams(협업 페이지)"],
+    ["커맨드바 런처 아이콘 개선", "이모지 → 크리스프 SVG 아이콘, 중립 다크 글래스로 조정"],
     ["커맨드바 런처 목업", "Raycast의 시그니처 런처 창을 히어로에 재현 — 검색 입력·Favorites/Suggestions·활성 행·Actions ⌘K 푸터"],
     ["히어로 WebGL 유리 배경", "라이브러리 없이 순수 WebGL fbm 셰이더로 살아 움직이는 붉은 유리 블롭(reduced-motion·폴백 대응)"],
     ["히어로 붉은 유리 블롭·타이포 계측", "대각선 광선을 붉은/핑크/화이트 유리 블롭으로 교체, 실제 계측값(64/72·max540)에 맞춘 타이포"],

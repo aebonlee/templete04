@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="재사용 가능한 반응형 랜딩페이지 디자인 템플릿 모음 — Raycast Pro, Raycast." />
+  <meta name="description" content="재사용 가능한 반응형 랜딩페이지 디자인 템플릿 모음 — Raycast Pro, Raycast, Frost, Mono, Neon, Sunset, Teams." />
   <title>디자인 템플릿 갤러리</title>
   <style>
     :root {
@@ -43,6 +43,11 @@
     .vbtn:hover { transform: translateY(-1px); border-color: var(--brand); background: var(--surface); }
     .vbtn .dot { width: 8px; height: 8px; border-radius: 3px; }
     .vbtn .dot--raycast { background: #ff6363; }
+    .dot--frost { background: #6c5ce7; }
+    .dot--mono { background: #e5484d; }
+    .dot--neon { background: #00e5ff; }
+    .dot--sunset { background: linear-gradient(120deg,#ff8a3d,#ff4d8d); }
+    .dot--teams { background: #7c6bff; }
 
     header.hero {
       position: relative; overflow: hidden;
@@ -88,10 +93,15 @@
     .btn-lg .dot { width: 9px; height: 9px; border-radius: 3px; }
     .btn-lg .dot--raycast { background: #ff6363; }
     .thumb--raycast { background: radial-gradient(120% 120% at 50% 0%, #ff636333, transparent), linear-gradient(160deg,#141013,#0a0708); }
+    .thumb--frost { color: #1b2030; background: radial-gradient(120% 120% at 30% 0%, #c9bcf5, transparent 70%), radial-gradient(120% 120% at 80% 30%, #9fe8d2, transparent 70%), #f6f7fb; }
+    .thumb--mono { color: #141414; background: #fafaf7; box-shadow: inset 0 0 0 1px #e2e2dd; }
+    .thumb--neon { color: #00e5ff; text-shadow: 0 0 18px rgba(0,229,255,.7); background: radial-gradient(120% 120% at 50% 0%, #00e5ff22, transparent 60%), #050507; }
+    .thumb--sunset { color: #fff; background: linear-gradient(135deg,#ff8a3d,#ff4d8d 55%,#a64dff); }
+    .thumb--teams { color: #fff; background: radial-gradient(120% 120% at 25% 0%, #7c6bff44, transparent 60%), radial-gradient(120% 120% at 85% 10%, #ff636333, transparent 60%), #08090c; }
 
     .grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      max-width: 760px; margin-inline: auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      max-width: 1040px; margin-inline: auto;
       gap: 22px; padding: 24px 0 72px;
     }
     .card {
@@ -126,6 +136,8 @@
 
     footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 13.5px; text-align: center; }
 
+    .topbar__nav { overflow-x: auto; scrollbar-width: none; }
+    .topbar__nav::-webkit-scrollbar { display: none; }
     @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
     @media (prefers-reduced-motion: reduce) { .card:hover { transform: none; } }
@@ -138,6 +150,11 @@
       <nav class="topbar__nav" aria-label="템플릿 버전">
         <a class="vbtn" href="./raycast-pro/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast Pro</a>
         <a class="vbtn" href="./raycast/"><span class="dot dot--raycast" aria-hidden="true"></span>Raycast</a>
+        <a class="vbtn" href="./raycast-frost/"><span class="dot dot--frost" aria-hidden="true"></span>Frost</a>
+        <a class="vbtn" href="./raycast-mono/"><span class="dot dot--mono" aria-hidden="true"></span>Mono</a>
+        <a class="vbtn" href="./raycast-neon/"><span class="dot dot--neon" aria-hidden="true"></span>Neon</a>
+        <a class="vbtn" href="./raycast-sunset/"><span class="dot dot--sunset" aria-hidden="true"></span>Sunset</a>
+        <a class="vbtn" href="./raycast-teams/"><span class="dot dot--teams" aria-hidden="true"></span>Teams</a>
       </nav>
     </div>
   </div>
@@ -172,6 +189,56 @@
           <span class="tag">런처 · 제품 (고충실도 클론)</span>
           <h2>Raycast</h2>
           <p>실제 raycast.com에 근접한 클론 — 커맨드바 UI 목업, 확장 그리드, AI 섹션, 시그니처 레드(#FF6363) 다크 테마.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
+      <a class="card" href="./raycast-frost/">
+        <div class="thumb thumb--frost">Frost</div>
+        <div class="card__body">
+          <span class="tag">라이트 · 프로스트 글래스</span>
+          <h2>Frost</h2>
+          <p>파스텔 오로라 메시 + 프로스트 글래스 카드의 밝고 산뜻한 라이트 테마. 인디고 액센트, Apple 감성의 프리미엄 룩.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
+      <a class="card" href="./raycast-mono/">
+        <div class="thumb thumb--mono">Mono</div>
+        <div class="card__body">
+          <span class="tag">에디토리얼 · 모노크롬</span>
+          <h2>Mono</h2>
+          <p>스위스 그리드 · 헤어라인 룰 · 대형 타이포의 미니멀 흑백 에디토리얼. 단 하나의 크림슨 액센트.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
+      <a class="card" href="./raycast-neon/">
+        <div class="thumb thumb--neon">Neon</div>
+        <div class="card__body">
+          <span class="tag">사이버펑크 · 네온</span>
+          <h2>Neon</h2>
+          <p>순수 블랙 위 네온 시안/마젠타 글로우, 테크 그리드 배경과 스캔라인, 모노스페이스 액센트의 신스웨이브 룩.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
+      <a class="card" href="./raycast-sunset/">
+        <div class="thumb thumb--sunset">Sunset</div>
+        <div class="card__body">
+          <span class="tag">바이브런트 · 그라디언트</span>
+          <h2>Sunset</h2>
+          <p>오렌지→핑크→바이올렛으로 흐르는 애니메이션 선셋 그라디언트. 둥글고 활기찬 웜톤 디자인.</p>
+          <span class="card__cta">템플릿 열기 →</span>
+        </div>
+      </a>
+
+      <a class="card" href="./raycast-teams/">
+        <div class="thumb thumb--teams">Teams</div>
+        <div class="card__body">
+          <span class="tag">협업 · 엔터프라이즈</span>
+          <h2>Teams</h2>
+          <p>raycast.com/teams에서 영감받은 프리미엄 다크 협업 페이지 — 공유 스니펫·프라이빗 스토어·3단 요금제, 레드+바이올렛 듀오 액센트.</p>
           <span class="card__cta">템플릿 열기 →</span>
         </div>
       </a>

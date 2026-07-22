@@ -54,7 +54,7 @@ jobs:
       - name: Ensure each template has required files
         run: |
           set -e
-          for dir in raycast-pro raycast; do
+          for dir in raycast-pro raycast raycast-frost raycast-mono raycast-neon raycast-sunset raycast-teams; do
             for file in index.html styles.css script.js; do
               if [ ! -f "$dir/$file" ]; then
                 echo "::error::missing $dir/$file"
