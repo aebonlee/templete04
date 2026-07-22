@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aurora — 스타트업/에이전시용 반응형 랜딩페이지 디자인 템플릿. 벤토 그리드, 스탯 밴드, FAQ 아코디언 포함." />
+  <title>Aurora — 스타트업 랜딩페이지 템플릿</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // 저장된 테마를 즉시 적용해 깜빡임(FOUC) 방지
+    (function () {
+      try {
+        var saved = localStorage.getItem("aurora-theme");
+        var theme = saved ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="Aurora 홈">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">Aurora</span>
+      </a>
+
+      <nav class="nav__links" aria-label="주요 메뉴">
+        <a href="#features">기능</a>
+        <a href="#stats">성과</a>
+        <a href="#pricing">가격</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="테마 전환" title="라이트/다크 테마 전환">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+        </button>
+        <a href="#" class="btn btn--ghost">문의하기</a>
+        <a href="#pricing" class="btn btn--primary">데모 신청</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#features">기능</a>
+      <a href="#stats">성과</a>
+      <a href="#pricing">가격</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="btn btn--primary">데모 신청</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="hero__aurora" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <a href="#" class="pill">
+          <span class="pill__dot"></span> Seed 라운드 투자 유치 완료
+        </a>
+        <h1 class="hero__title">
+          아이디어를 <span class="gradient-text">현실</span>로<br />
+          더 빠르게 만드는 팀
+        </h1>
+        <p class="hero__lead">
+          Aurora는 팀의 성장을 가속하는 올인원 플랫폼입니다.
+          기획부터 배포까지, 하나의 워크스페이스에서 끝내세요.
+        </p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn btn--primary btn--lg">무료로 시작하기</a>
+          <a href="#features" class="btn btn--outline btn--lg">
+            <span class="play" aria-hidden="true">▶</span> 소개 영상 보기
+          </a>
+        </div>
+
+        <!-- Bento preview -->
+        <div class="bento" aria-hidden="true">
+          <div class="bento__cell bento__cell--big">
+            <span class="bento__tag">대시보드</span>
+            <div class="chart">
+              <span style="--h:38%"></span><span style="--h:60%"></span>
+              <span style="--h:45%"></span><span style="--h:78%"></span>
+              <span style="--h:66%"></span><span style="--h:92%"></span>
+            </div>
+          </div>
+          <div class="bento__cell">
+            <span class="bento__tag">활성 사용자</span>
+            <strong class="bento__stat">24,800</strong>
+            <small class="bento__delta">▲ 12.4%</small>
+          </div>
+          <div class="bento__cell">
+            <span class="bento__tag">진행 중</span>
+            <ul class="mini-list">
+              <li><i></i> 온보딩 개선</li>
+              <li><i></i> 결제 연동</li>
+              <li><i></i> API v2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Logos ============ -->
+    <section class="logos">
+      <div class="container">
+        <p class="logos__label">이미 다양한 팀이 Aurora와 함께 성장하고 있습니다</p>
+        <div class="logos__row">
+          <span>Nimbus</span><span>Vertex</span><span>Lumen</span>
+          <span>Cobalt</span><span>Pulse</span><span>Orbit</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Features (Bento grid) ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">기능</span>
+          <h2>팀을 위한 모든 것이 한곳에</h2>
+          <p>흩어진 도구는 그만. Aurora 하나로 협업의 흐름을 단순하게 만드세요.</p>
+        </header>
+
+        <div class="bento-grid">
+          <article class="card tile tile--wide">
+            <div class="tile__icon">📊</div>
+            <h3>실시간 분석</h3>
+            <p>지표를 실시간으로 추적하고, 팀 전체가 같은 데이터를 바라봅니다.</p>
+          </article>
+          <article class="card tile">
+            <div class="tile__icon">⚙️</div>
+            <h3>자동화</h3>
+            <p>반복 업무를 워크플로우로 자동화하세요.</p>
+          </article>
+          <article class="card tile">
+            <div class="tile__icon">🔗</div>
+            <h3>통합</h3>
+            <p>즐겨 쓰는 도구를 클릭 한 번에 연결합니다.</p>
+          </article>
+          <article class="card tile tile--tall">
+            <div class="tile__icon">🤝</div>
+            <h3>협업</h3>
+            <p>댓글, 멘션, 실시간 편집으로 팀이 자연스럽게 함께 일합니다. 어디서나, 어떤 기기에서나.</p>
+          </article>
+          <article class="card tile tile--wide">
+            <div class="tile__icon">🔒</div>
+            <h3>엔터프라이즈 보안</h3>
+            <p>SSO, 감사 로그, 세분화된 권한 관리로 안심하고 확장하세요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Stats ============ -->
+    <section class="stats" id="stats">
+      <div class="container stats__grid">
+        <div class="stat">
+          <strong class="stat__num" data-count="99.9">0</strong><span class="stat__unit">%</span>
+          <p>가동 시간 보장</p>
+        </div>
+        <div class="stat">
+          <strong class="stat__num" data-count="12000">0</strong><span class="stat__unit">+</span>
+          <p>활성 팀</p>
+        </div>
+        <div class="stat">
+          <strong class="stat__num" data-count="40">0</strong><span class="stat__unit">%</span>
+          <p>평균 업무 시간 절감</p>
+        </div>
+        <div class="stat">
+          <strong class="stat__num" data-count="150">0</strong><span class="stat__unit">+</span>
+          <p>연동 앱</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Pricing ============ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">가격</span>
+          <h2>투명하고 단순한 요금제</h2>
+          <p>숨은 비용 없이, 팀 규모에 맞게 선택하세요.</p>
+        </header>
+
+        <div class="pricing">
+          <div class="card plan">
+            <h3>Starter</h3>
+            <p class="plan__price">₩0<span>/월</span></p>
+            <p class="plan__desc">개인과 작은 팀을 위한 시작</p>
+            <ul>
+              <li>멤버 3명까지</li>
+              <li>기본 분석</li>
+              <li>커뮤니티 지원</li>
+            </ul>
+            <a href="#" class="btn btn--outline btn--block">시작하기</a>
+          </div>
+          <div class="card plan plan--featured">
+            <span class="plan__tag">추천</span>
+            <h3>Growth</h3>
+            <p class="plan__price">₩39,000<span>/월</span></p>
+            <p class="plan__desc">성장하는 팀을 위한 완전한 도구</p>
+            <ul>
+              <li>멤버 무제한</li>
+              <li>고급 분석 &amp; 자동화</li>
+              <li>모든 연동 앱</li>
+              <li>우선 지원</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--block">14일 무료 체험</a>
+          </div>
+          <div class="card plan">
+            <h3>Enterprise</h3>
+            <p class="plan__price">문의<span></span></p>
+            <p class="plan__desc">보안과 규모가 중요한 조직</p>
+            <ul>
+              <li>SSO &amp; 감사 로그</li>
+              <li>전담 매니저</li>
+              <li>SLA 보장</li>
+            </ul>
+            <a href="#" class="btn btn--outline btn--block">영업팀 문의</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--muted" id="faq">
+      <div class="container faq">
+        <header class="section__head">
+          <span class="eyebrow">FAQ</span>
+          <h2>자주 묻는 질문</h2>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary>무료 체험에도 신용카드가 필요한가요?</summary>
+            <p>아니요. 신용카드 없이 14일 동안 모든 기능을 사용해 볼 수 있습니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>언제든 요금제를 변경할 수 있나요?</summary>
+            <p>네. 대시보드에서 언제든 업그레이드하거나 다운그레이드할 수 있으며, 차액은 자동 정산됩니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>데이터는 안전하게 보관되나요?</summary>
+            <p>모든 데이터는 전송 구간과 저장 시 암호화되며, 정기적인 백업과 감사 로그를 제공합니다.</p>
+          </details>
+          <details class="faq__item">
+            <summary>팀 규모가 커지면 어떻게 되나요?</summary>
+            <p>Growth 요금제는 멤버 수 제한이 없으며, 대규모 조직은 Enterprise로 SSO와 전담 지원을 받을 수 있습니다.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <h2>오늘 Aurora와 함께 시작하세요</h2>
+        <p>설정은 5분이면 충분합니다. 팀의 다음 단계를 지금 준비하세요.</p>
+        <div class="cta__actions">
+          <a href="#pricing" class="btn btn--primary btn--lg">무료로 시작하기</a>
+          <a href="#" class="btn btn--ghost btn--lg">데모 예약</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name">Aurora</span>
+        </a>
+        <p>아이디어를 현실로 만드는 팀의 워크스페이스.</p>
+      </div>
+      <nav class="footer__col">
+        <h4>제품</h4>
+        <a href="#features">기능</a>
+        <a href="#pricing">가격</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <nav class="footer__col">
+        <h4>회사</h4>
+        <a href="#">소개</a>
+        <a href="#">블로그</a>
+        <a href="#">채용</a>
+      </nav>
+      <nav class="footer__col">
+        <h4>리소스</h4>
+        <a href="#">문서</a>
+        <a href="#">가이드</a>
+        <a href="#">상태</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <small>© 2026 Aurora. 모든 권리 보유.</small>
+      <div class="footer__social">
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="GitHub">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

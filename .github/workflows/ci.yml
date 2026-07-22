@@ -1,0 +1,65 @@
+name: CI
+
+# 브랜치 보호 규칙에서 "필수 상태 검사(required status check)"로
+# 지정할 수 있는 가벼운 정적 검증 워크플로우입니다.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate templates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check HTML tag nesting
+        run: |
+          python3 - <<'PY'
+          import glob, sys
+          import html.parser
+
+          class V(html.parser.HTMLParser):
+              VOID = {"meta","link","br","img","input","hr","span","source","wbr","area","base","col","embed","param","track"}
+              def __init__(self):
+                  super().__init__()
+                  self.stack = []
+              def handle_starttag(self, t, a):
+                  if t not in self.VOID:
+                      self.stack.append(t)
+              def handle_startendtag(self, t, a):
+                  pass
+              def handle_endtag(self, t):
+                  if t in self.VOID:
+                      return
+                  if self.stack and self.stack[-1] == t:
+                      self.stack.pop()
+                  elif t in self.stack:
+                      while self.stack and self.stack.pop() != t:
+                          pass
+
+          failed = False
+          for f in sorted(glob.glob("**/*.html", recursive=True)):
+              p = V()
+              p.feed(open(f, encoding="utf-8").read())
+              if p.stack:
+                  print(f"::error file={f}::unclosed tags: {p.stack}")
+                  failed = True
+              else:
+                  print(f"OK  {f}")
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Ensure each template has required files
+        run: |
+          set -e
+          for dir in nova aurora; do
+            for file in index.html styles.css script.js; do
+              if [ ! -f "$dir/$file" ]; then
+                echo "::error::missing $dir/$file"
+                exit 1
+              fi
+            done
+            echo "OK  $dir/ has index.html, styles.css, script.js"
+          done
