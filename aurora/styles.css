@@ -26,6 +26,27 @@
 
   /* 그라디언트 */
   --grad: linear-gradient(120deg, var(--brand), var(--brand-2));
+
+  color-scheme: dark;
+}
+
+/* ---------- 라이트 테마 변형 ---------- */
+:root[data-theme="light"] {
+  --bg:        #f7f9fc;
+  --bg-soft:   #eef2f8;
+  --surface:   #ffffff;
+  --surface-2: #f1f5fb;
+  --border:    #dce3ee;
+  --text:      #0f1626;
+  --muted:     #5a6782;
+
+  --brand:     #0891b2;   /* 시안(라이트에서 대비 확보) */
+  --brand-2:   #4f46e5;   /* 인디고 */
+  --accent:    #db2777;   /* 핑크 포인트 */
+
+  --shadow:    0 20px 50px -24px rgba(31, 45, 70, .25);
+
+  color-scheme: light;
 }
 
 /* ---------- 기본 리셋 ---------- */
@@ -129,6 +150,26 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav__links a { color: var(--muted); font-size: 14.5px; font-weight: 500; transition: color .15s; }
 .nav__links a:hover { color: var(--text); }
 .nav__actions { display: flex; align-items: center; gap: 10px; }
+
+.theme-toggle {
+  width: 40px; height: 40px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+  transition: background .2s ease, border-color .2s ease, transform .15s ease;
+}
+.theme-toggle:hover { background: var(--surface-2); border-color: var(--brand); transform: translateY(-1px); }
+/* 아이콘: 다크일 때 달, 라이트일 때 해 표시 */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: inline; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: inline; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
 .nav__toggle {
   display: none;
@@ -397,6 +438,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer__social { display: flex; gap: 18px; }
 .footer__social a { color: var(--muted); font-size: 14px; transition: color .15s; }
 .footer__social a:hover { color: var(--text); }
+
+/* ---------- 라이트 테마: 그라디언트 위 텍스트 대비 보정 ---------- */
+:root[data-theme="light"] .btn--primary,
+:root[data-theme="light"] .plan__tag,
+:root[data-theme="light"] .nav__mobile a.btn { color: #ffffff; }
+:root[data-theme="light"] .hero__aurora { opacity: .7; }
 
 /* ---------- 스크롤 진입 애니메이션 ---------- */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }

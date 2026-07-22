@@ -6,6 +6,29 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  /* ---------- 테마 토글 (다크 ⇄ 라이트) ---------- */
+  var themeToggle = document.getElementById("themeToggle");
+  var root = document.documentElement;
+
+  if (themeToggle) {
+    var syncPressed = function () {
+      themeToggle.setAttribute(
+        "aria-pressed",
+        root.getAttribute("data-theme") === "light" ? "true" : "false"
+      );
+    };
+    syncPressed();
+
+    themeToggle.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("aurora-theme", next);
+      } catch (e) {}
+      syncPressed();
+    });
+  }
+
   /* ---------- 모바일 메뉴 토글 ---------- */
   var toggle = document.getElementById("navToggle");
   var mobile = document.getElementById("navMobile");

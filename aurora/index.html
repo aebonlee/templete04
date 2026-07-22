@@ -6,6 +6,17 @@
   <meta name="description" content="Aurora — 스타트업/에이전시용 반응형 랜딩페이지 디자인 템플릿. 벤토 그리드, 스탯 밴드, FAQ 아코디언 포함." />
   <title>Aurora — 스타트업 랜딩페이지 템플릿</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // 저장된 테마를 즉시 적용해 깜빡임(FOUC) 방지
+    (function () {
+      try {
+        var saved = localStorage.getItem("aurora-theme");
+        var theme = saved ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <!-- ============ Navigation ============ -->
@@ -24,6 +35,11 @@
       </nav>
 
       <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="테마 전환" title="라이트/다크 테마 전환">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+        </button>
         <a href="#" class="btn btn--ghost">문의하기</a>
         <a href="#pricing" class="btn btn--primary">데모 신청</a>
       </div>
