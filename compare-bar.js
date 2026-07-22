@@ -9,7 +9,7 @@
 
   // 현재 페이지 깊이에 맞춘 상대 경로 베이스 (루트=./, 하위폴더=../)
   var path = location.pathname;
-  var folders = ["raycast-pro", "raycast", "nova", "aurora"];
+  var folders = ["raycast-pro", "raycast"];
   var current = "";
   for (var i = 0; i < folders.length; i++) {
     if (path.indexOf("/" + folders[i] + "/") !== -1 || path.indexOf("/" + folders[i]) !== -1) {
@@ -21,10 +21,8 @@
 
   // 버전 목록
   var versions = [
-    { id: "raycast-pro", label: "Raycast Pro", note: "실제 사이트 재현 · 칼집 광선", dot: "#ff6363" },
-    { id: "raycast", label: "Raycast", note: "고충실도 클론 · 세로 광선", dot: "#ff6363" },
-    { id: "nova", label: "Nova", note: "제품 · 런처형", dot: "#6c8cff" },
-    { id: "aurora", label: "Aurora", note: "스타트업 · 라이트/다크", dot: "#22d3ee" }
+    { id: "raycast-pro", label: "Raycast Pro", note: "실제 사이트 재현 · 붉은 유리 블롭", dot: "#ff6363" },
+    { id: "raycast", label: "Raycast", note: "고충실도 클론 · 세로 광선", dot: "#ff6363" }
   ];
 
   // 개발 내역 (최신순)
