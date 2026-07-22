@@ -477,8 +477,40 @@ kbd {
 /* 텍스트 가독성 (밝은 블롭 위) */
 .hero__inner { z-index: 3; }
 .hero__title { text-shadow: 0 2px 30px rgba(0,0,0,.35); }
-.hero__sub { text-shadow: 0 1px 16px rgba(0,0,0,.4); }
+.hero__sub { color: #d6d9e0; text-shadow: 0 1px 3px rgba(0,0,0,.55), 0 2px 22px rgba(0,0,0,.5); }
 
 @media (prefers-reduced-motion: reduce) {
   .pane { animation: none !important; }
+}
+
+/* =========================================================
+   히어로 타이포 — 실제 raycast.com 계측값에 맞춤
+   h1 64/72 · w600 · max540 | sub 18 · max786 | gap 32 | 상단 여백↑
+   ========================================================= */
+.hero { padding-top: 200px; padding-bottom: 120px; }
+.hero__inner { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.hero__title {
+  font-size: clamp(2.4rem, 6.2vw, 64px);
+  line-height: 1.125;         /* 72/64 */
+  font-weight: 600;
+  letter-spacing: -.02em;
+  max-width: 540px;
+  margin: 0 auto;
+  text-wrap: balance;          /* Raycast의 wrap-balancer와 동일 효과 */
+}
+.hero__sub {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 786px;
+  margin: 0 auto;
+  color: #d6d9e0;
+  text-wrap: balance;
+}
+/* gap 로 간격을 관리하므로 개별 상단 마진 제거 */
+.hero__cta, .hero__meta { margin-top: 8px; }
+.announce { margin-top: 20px; }
+
+@media (max-width: 720px) {
+  .hero { padding-top: 130px; }
+  .hero__sub { font-size: 16px; padding-inline: 8px; }
 }
