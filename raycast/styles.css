@@ -122,7 +122,37 @@ kbd {
   background-position: 30% 20%, 70% 30%; background-repeat: no-repeat;
   background-size: 60% 80%, 55% 70%; filter: blur(20px);
 }
-.hero__inner { position: relative; }
+/* 브랜드 컬러 세로 광선 (칼집 낸 듯한 강렬한 라인) */
+.hero__rays { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.ray {
+  position: absolute; top: -40px; left: var(--x); width: 2px; height: var(--h);
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--c) 90%, white) 22%,
+    var(--c) 50%,
+    color-mix(in srgb, var(--c) 70%, transparent) 78%,
+    transparent 100%);
+  box-shadow:
+    0 0 12px 1px var(--c),
+    0 0 34px 4px color-mix(in srgb, var(--c) 55%, transparent),
+    0 0 70px 10px color-mix(in srgb, var(--c) 28%, transparent);
+  border-radius: 2px;
+  opacity: .85;
+  transform: translateY(-10px);
+  animation: ray-breathe 6s ease-in-out infinite;
+  animation-delay: var(--d);
+}
+.ray::before {
+  content: ""; position: absolute; inset: -1px -8px; border-radius: 8px;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--c) 18%, transparent) 45%, transparent);
+  filter: blur(6px);
+}
+@keyframes ray-breathe {
+  0%, 100% { opacity: .55; transform: translateY(-14px) scaleY(.98); }
+  50%      { opacity: 1;   transform: translateY(0)     scaleY(1.02); }
+}
+
+.hero__inner { position: relative; z-index: 1; }
 .hero__title { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 600; letter-spacing: -.045em; }
 .hero__sub { color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.3rem); margin: 24px auto 0; max-width: 620px; }
 .hero__cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
